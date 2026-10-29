@@ -295,14 +295,25 @@ def regex_fill(card, text):
     return card
 
 
-def ask_ai(prompt):
+def ask_ai(prompt, tries=2):
+    for attempt in range(tries):
+        try:
+            return _ask_ai_once(prompt)
+        except Exception as ex:
+            print(f"AI attempt {attempt + 1} failed:", ex)
+            if attempt + 1 == tries:
+                raise
+            time.sleep(20)
+
+
+def _ask_ai_once(prompt):
     if GEMINI_KEY:
         r = requests.post(
             f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent",
             headers={"x-goog-api-key": GEMINI_KEY, "content-type": "application/json"},
             json={"contents": [{"parts": [{"text": prompt}]}],
                   "generationConfig": {"responseMimeType": "application/json"}},
-            timeout=120)
+            timeout=240)
         r.raise_for_status()
         time.sleep(15)  # stay inside free-tier limits
         return "".join(p.get("text", "") for p in r.json()["candidates"][0]["content"]["parts"])
@@ -347,8 +358,8 @@ def keyword_classify(items):
 
 def ai_classify(items):
     cards = []
-    for start in range(0, len(items), 30):
-        batch = items[start:start + 30]
+    for start in range(0, len(items), 15):
+        batch = items[start:start + 15]
         lines = [f"{i}. {it['title']} | {it['source']} | {it['snippet'][:250]}" for i, it in enumerate(batch)]
         prompt = f"""You filter opportunity alerts for this user:
 {PROFILE}
@@ -452,15 +463,17 @@ def format_card(c):
 
 
 def send_telegram(text):
+    """Returns True if the message was delivered."""
     if not (TG_TOKEN and TG_CHAT):
         print(text, "\n")
-        return
+        return False
     r = requests.post(f"https://api.telegram.org/bot{TG_TOKEN}/sendMessage",
                       data={"chat_id": TG_CHAT, "text": text[:4000], "parse_mode": "HTML",
                             "disable_web_page_preview": "true"}, timeout=30)
     if not r.ok:
         print("Telegram error:", r.text)
     time.sleep(2)
+    return r.ok
 
 
 def send_whatsapp(cards):
@@ -519,11 +532,13 @@ def deliver(st):
     hour = datetime.now(IST).hour
     slots_left = max(1, len([h for h in SEND_HOURS_IST if h >= hour]))
     n = min(MAX_PER_SLOT, math.ceil(len(st["queue"]) / slots_left))
-    batch, st["queue"] = st["queue"][:n], st["queue"][n:]
+    batch, rest = st["queue"][:n], st["queue"][n:]
+    sent, failed = [], []
     for c in batch:
-        send_telegram(format_card(c))
-    send_whatsapp(batch)
-    print(f"Sent {len(batch)}, left {len(st['queue'])}")
+        (sent if send_telegram(format_card(c)) else failed).append(c)
+    st["queue"] = failed + rest          # failed ones are kept and retried next time
+    send_whatsapp(sent)
+    print(f"Sent {len(sent)}, failed {len(failed)}, left {len(st['queue'])}")
 
 
 def main():
