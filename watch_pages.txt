@@ -1,0 +1,10 @@
+# Web pages to watch. You get an alert when the page text changes.
+# Format:  Name | URL
+# Good choices: notices/circulars pages of UGC-MMTTCs, MSFDA, University of Mumbai,
+# ANRF/SERB "calls" page, CSIR-HRDG, your favourite journals' "special issues" page.
+# For book chapters, also watch publisher "call for chapters / book proposals" pages
+# (e.g. IGI Global, IntechOpen, Elsevier, Springer, CRC Press, Wiley, Jenny Stanford).
+# Avoid pages with live counters/clocks - they change every day and cause false alerts.
+#
+# Example (remove the # to activate):
+# University of Mumbai circulars | https://example.com/circulars

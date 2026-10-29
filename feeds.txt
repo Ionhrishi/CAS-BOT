@@ -1,0 +1,24 @@
+# Any RSS feed URL, one per line. Best source: Google Alerts.
+# How: google.com/alerts -> type a search -> Show options ->
+#      "Deliver to: RSS feed" -> Create -> copy the RSS link and paste below.
+# Google Alerts cover the whole web (college sites, PDFs), not just news.
+#
+# Suggested alerts to create:
+#   "faculty induction programme" 2026
+#   "refresher course" chemistry
+#   "faculty development programme" chemistry
+#   "call for papers" chemistry conference
+#   "minor research project" teachers
+#   "call for chapters" chemistry
+#   "call for book chapters" nanomaterials OR catalysis
+#   "guest editor" special issue chemistry
+#   "call for reviewers" chemistry journal
+#   patent filing scheme faculty
+#   "IPR workshop" faculty
+#   MSFDA
+#   "travel grant" conference
+#   SWAYAM "course proposal"
+#   "industry academia" collaboration call
+#   "call for proposals" research scheme India
+#
+# Paste feed links here:

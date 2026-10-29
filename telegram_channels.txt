@@ -1,0 +1,11 @@
+# PUBLIC Telegram channels to read, one per line (username only, without @).
+# Example: if the channel link is https://t.me/abcdef  ->  write:  abcdef
+#
+# How to find good channels:
+#   In Telegram, search: "FDP", "faculty development programme", "refresher course",
+#   "conference alerts", "call for chapters", "research grants", "patent".
+#   Open a channel -> tap its name -> copy the t.me link.
+# Only PUBLIC channels work. Private / invite-link channels cannot be read.
+# Test: open https://t.me/s/<username> in a browser. If you see posts, it works.
+#
+# Add channel usernames below:

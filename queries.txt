@@ -1,0 +1,82 @@
+# Google News searches - one per line. Lines starting with # are ignored.
+# Edit freely on GitHub. The bot automatically looks only at the last 7 days.
+
+# --- Training programmes ---
+"faculty induction programme" UGC
+"refresher course" UGC MMTTC
+"Malaviya Mission" teacher training programme
+MSFDA faculty development programme Maharashtra
+MSFDA course OR training OR workshop
+"Maharashtra State Faculty Development Academy"
+MSFDA registration teachers
+"Guru Dakshta" faculty induction programme
+"faculty development programme" chemistry
+"short term course" chemistry faculty
+AICTE ATAL FDP chemistry OR nanotechnology OR "green technology"
+SWAYAM ARPIT refresher course
+
+# --- Workshops / lectures ---
+chemistry workshop faculty "hands-on"
+"lecture series" chemistry webinar
+
+# --- Conferences ---
+international conference chemistry India
+national conference chemistry India
+conference "green chemistry" OR catalysis OR nanomaterials
+conference photocatalysis OR "materials science" OR MXene
+
+# --- Journals / APC ---
+"call for papers" "special issue" catalysis OR photocatalysis OR nanomaterials
+"APC waiver" OR "article processing charge waiver" journal
+
+# --- Book chapters / Editor / Reviewer ---
+"call for chapters" chemistry OR catalysis OR nanomaterials
+"call for book chapters" chemistry OR "green chemistry" OR "materials science"
+"chapter proposals" edited book chemistry OR environmental OR nanotechnology
+"edited volume" "call for chapters" CRC OR Elsevier OR Springer OR Wiley OR IntechOpen
+"book proposal" chemistry publisher call
+"guest editor" "special issue" chemistry OR catalysis OR materials
+"call for reviewers" OR "join our reviewer board" chemistry journal
+"editorial board" invitation chemistry journal "call for"
+"topic editor" OR "reviewer board" MDPI chemistry
+
+# --- Patents / IPR ---
+patent filing support scheme academic OR faculty OR university
+"IPR workshop" OR "patent drafting workshop" faculty
+KAPILA patent OR "intellectual property literacy"
+NIPAM IPR awareness programme
+"patent facilitation" OR "IPR cell" university call
+
+# --- Travel grants ---
+"international travel support" ANRF OR SERB OR CSIR OR DBT
+"travel grant" international conference chemistry India
+"travel grant" young scientists OR faculty conference abroad
+
+# --- MOOCs / e-content creation ---
+SWAYAM "course proposals" OR "call for proposals" MOOC
+"MOOC development" OR "e-content development" teachers call
+NPTEL OR CEC OR "e-PG Pathshala" course coordinator call
+
+# --- Consultancy / Industry collaboration ---
+"industry-academia collaboration" call for proposals India
+"industry academia" research partnership grant chemistry
+"sponsored research" OR consultancy college faculty chemistry
+"technology transfer" OR incubation call faculty startup chemistry
+
+# --- Research grants ---
+"call for proposals" ANRF OR SERB OR DST chemistry
+"minor research project" OR "major research project" university college teachers
+CSIR OR DBT research grant "call for proposals"
+NCSTC "call for proposals"
+University of Mumbai research grant teachers
+ANRF "call for proposals" OR scheme launched
+DST scheme "call for proposals" faculty
+CSIR "extramural research" OR EMR scheme
+ICMR OR DBT "call for proposals" research
+BRNS OR "DAE" research grant proposals universities
+DRDO "grants-in-aid" OR ISRO RESPOND research proposals
+"PM-USHA" OR RUSA grant college research
+Maharashtra government research grant teachers OR RGSTC
+AICTE research promotion scheme OR "AICTE grant"
+UGC scheme teachers research grant
+MoES OR MeitY "call for proposals" research
