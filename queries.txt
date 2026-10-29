@@ -1,82 +1,74 @@
 # Google News searches - one per line. Lines starting with # are ignored.
-# Edit freely on GitHub. The bot automatically looks only at the last 7 days.
+# Written as "announcement" phrases so news reports are avoided.
+# The bot looks only at the last 7 days.
 
-# --- Training programmes ---
-"faculty induction programme" UGC
-"refresher course" UGC MMTTC
-"Malaviya Mission" teacher training programme
-MSFDA faculty development programme Maharashtra
-MSFDA course OR training OR workshop
-"Maharashtra State Faculty Development Academy"
-MSFDA registration teachers
-"Guru Dakshta" faculty induction programme
-"faculty development programme" chemistry
-"short term course" chemistry faculty
-AICTE ATAL FDP chemistry OR nanotechnology OR "green technology"
-SWAYAM ARPIT refresher course
+# --- FIP / Orientation / Refresher / FDP / Short-term courses ---
+"faculty induction programme" registration OR "applications invited"
+"Guru Dakshta" faculty induction programme registration
+"refresher course" chemistry OR "physical sciences" registration
+"refresher course" UGC MMTTC "last date"
+"Malaviya Mission" teacher training programme registration
+MSFDA course OR programme registration teachers
+"Maharashtra State Faculty Development Academy" programme
+"faculty development programme" chemistry registration
+"faculty development programme" "last date" teachers
+"short term course" chemistry OR materials registration
+AICTE ATAL FDP chemistry OR nanotechnology OR materials
+SWAYAM ARPIT refresher course registration
 
-# --- Workshops / lectures ---
-chemistry workshop faculty "hands-on"
-"lecture series" chemistry webinar
+# --- Workshops / Seminars ---
+workshop chemistry "registration open" OR "register now"
+"hands-on workshop" chemistry OR spectroscopy OR instrumentation
+national seminar chemistry "call for papers" OR registration
+webinar OR "lecture series" chemistry registration
 
-# --- Conferences ---
-international conference chemistry India
-national conference chemistry India
-conference "green chemistry" OR catalysis OR nanomaterials
-conference photocatalysis OR "materials science" OR MXene
-
-# --- Journals / APC ---
+# --- Conferences / Call for papers ---
+"call for papers" international conference chemistry
+"call for abstracts" chemistry conference
+conference catalysis OR nanomaterials OR "green chemistry" "call for papers"
+conference "materials science" OR photocatalysis abstract submission
 "call for papers" "special issue" catalysis OR photocatalysis OR nanomaterials
-"APC waiver" OR "article processing charge waiver" journal
+"call for papers" "special issue" "green chemistry" OR "materials chemistry"
 
 # --- Book chapters / Editor / Reviewer ---
 "call for chapters" chemistry OR catalysis OR nanomaterials
-"call for book chapters" chemistry OR "green chemistry" OR "materials science"
-"chapter proposals" edited book chemistry OR environmental OR nanotechnology
-"edited volume" "call for chapters" CRC OR Elsevier OR Springer OR Wiley OR IntechOpen
-"book proposal" chemistry publisher call
-"guest editor" "special issue" chemistry OR catalysis OR materials
-"call for reviewers" OR "join our reviewer board" chemistry journal
-"editorial board" invitation chemistry journal "call for"
-"topic editor" OR "reviewer board" MDPI chemistry
+"call for book chapters" chemistry OR "materials science"
+"chapter proposals" edited book chemistry OR nanotechnology
+"guest editor" "special issue" chemistry call
+"call for reviewers" chemistry journal
+
+# --- APC waiver ---
+"APC waiver" OR "article processing charge waiver" journal chemistry
+"APC discount" OR "free publication" special issue chemistry
 
 # --- Patents / IPR ---
-patent filing support scheme academic OR faculty OR university
-"IPR workshop" OR "patent drafting workshop" faculty
-KAPILA patent OR "intellectual property literacy"
-NIPAM IPR awareness programme
-"patent facilitation" OR "IPR cell" university call
+patent filing support scheme faculty OR university apply
+"IPR workshop" OR "patent drafting workshop" registration
+KAPILA patent apply
 
 # --- Travel grants ---
-"international travel support" ANRF OR SERB OR CSIR OR DBT
-"travel grant" international conference chemistry India
-"travel grant" young scientists OR faculty conference abroad
+"international travel support" ANRF OR SERB OR CSIR apply
+"travel grant" international conference chemistry apply
 
-# --- MOOCs / e-content creation ---
+# --- MOOCs / e-content ---
 SWAYAM "course proposals" OR "call for proposals" MOOC
-"MOOC development" OR "e-content development" teachers call
-NPTEL OR CEC OR "e-PG Pathshala" course coordinator call
+"e-content development" OR "MOOC development" teachers call
 
-# --- Consultancy / Industry collaboration ---
-"industry-academia collaboration" call for proposals India
-"industry academia" research partnership grant chemistry
-"sponsored research" OR consultancy college faculty chemistry
-"technology transfer" OR incubation call faculty startup chemistry
+# --- Industry collaboration ---
+"industry-academia collaboration" "call for proposals"
+"sponsored research" chemistry "call for proposals"
 
-# --- Research grants ---
-"call for proposals" ANRF OR SERB OR DST chemistry
-"minor research project" OR "major research project" university college teachers
-CSIR OR DBT research grant "call for proposals"
+# --- Research grants (all government) ---
+"call for proposals" ANRF OR SERB chemistry
+"call for proposals" DST scheme research
+CSIR "extramural research" OR EMR "call for proposals"
+DBT OR ICMR "call for proposals" research
+BRNS OR DAE "research proposals" universities
+DRDO "grants-in-aid" OR ISRO RESPOND proposals
+"PM-USHA" OR RUSA grant research college
+RGSTC OR "Maharashtra government" research grant proposals
+AICTE research promotion scheme "call for proposals"
+UGC scheme research grant teachers apply
+"minor research project" OR "major research project" "applications invited"
+University of Mumbai research grant teachers apply
 NCSTC "call for proposals"
-University of Mumbai research grant teachers
-ANRF "call for proposals" OR scheme launched
-DST scheme "call for proposals" faculty
-CSIR "extramural research" OR EMR scheme
-ICMR OR DBT "call for proposals" research
-BRNS OR "DAE" research grant proposals universities
-DRDO "grants-in-aid" OR ISRO RESPOND research proposals
-"PM-USHA" OR RUSA grant college research
-Maharashtra government research grant teachers OR RGSTC
-AICTE research promotion scheme OR "AICTE grant"
-UGC scheme teachers research grant
-MoES OR MeitY "call for proposals" research
