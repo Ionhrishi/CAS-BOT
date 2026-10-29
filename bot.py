@@ -30,7 +30,7 @@ TG_CHANNELS_FILE = "telegram_channels.txt"
 SCAN_CRON = "30 1 * * *"                    # must match the first cron in the workflow
 SEND_HOURS_IST = [8, 10, 12, 14, 16, 18, 20]  # must match the second cron in the workflow
 MAX_PER_SLOT = 8                            # at most this many messages per sending time
-MAX_AGE_DAYS = int(os.getenv("MAX_AGE_DAYS", "7"))
+MAX_AGE_DAYS = int(os.getenv("MAX_AGE_DAYS", "14"))
 MIN_SCORE = int(os.getenv("MIN_SCORE", "3"))
 MIN_DETAILS = 1                             # need at least this many of: mode, fee, deadline, dates, venue
 QUEUE_KEEP_DAYS = 3                         # drop unsent items older than this
@@ -40,7 +40,7 @@ TG_CHAT = os.getenv("TELEGRAM_CHAT_ID", "")
 WA_PHONE = os.getenv("WHATSAPP_PHONE", "")
 WA_KEY = os.getenv("CALLMEBOT_APIKEY", "")
 GEMINI_KEY = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL = os.getenv("GEMINI_MODEL", "") or "gemini-2.5-flash-lite"
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "")   # empty = pick a working free model automatically
 CLAUDE_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 CLAUDE_MODEL = os.getenv("CLAUDE_MODEL", "claude-haiku-5-5")
 SCHEDULE = os.getenv("SCHEDULE", "")        # filled by GitHub (which cron started this run)
@@ -381,17 +381,73 @@ def ask_ai(prompt, tries=2):
             time.sleep(20)
 
 
+_GEMINI = {"model": None, "config": None}
+GEN_CONFIGS = [   # tried in order; thinking switched off where the model allows it (much faster)
+    {"responseMimeType": "application/json", "thinkingConfig": {"thinkingBudget": 0}},
+    {"responseMimeType": "application/json", "thinkingConfig": {"thinkingLevel": "low"}},
+    {"responseMimeType": "application/json"},
+]
+
+
+def gemini_models():
+    """Ask Google which models this key can use; prefer fast 'flash-lite', then 'flash'."""
+    if GEMINI_MODEL:
+        return [GEMINI_MODEL]
+    try:
+        r = requests.get("https://generativelanguage.googleapis.com/v1beta/models",
+                         headers={"x-goog-api-key": GEMINI_KEY}, params={"pageSize": 1000}, timeout=30)
+        r.raise_for_status()
+        names = []
+        for m in r.json().get("models", []):
+            n = m.get("name", "").replace("models/", "")
+            if "generateContent" not in m.get("supportedGenerationMethods", []) or "flash" not in n:
+                continue
+            if re.search(r"image|tts|audio|live|embed|vision|exp|thinking|computer|robotics", n):
+                continue
+            names.append(n)
+        def rank(n):
+            ver = [float(x) for x in re.findall(r"(\d+(?:\.\d+)?)", n)[:1]] or [0]
+            return ("preview" in n, "lite" not in n, "latest" in n, -ver[0])
+        names.sort(key=rank)
+        print("Gemini models available:", ", ".join(names[:6]))
+        return names[:4] or ["gemini-flash-latest"]
+    except Exception as ex:
+        print("Could not list Gemini models:", ex)
+        return ["gemini-flash-latest"]
+
+
+def _gemini_call(model, cfg, prompt):
+    r = requests.post(
+        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+        headers={"x-goog-api-key": GEMINI_KEY, "content-type": "application/json"},
+        json={"contents": [{"parts": [{"text": prompt}]}], "generationConfig": cfg}, timeout=150)
+    if r.status_code in (400, 404):
+        raise ValueError(f"{r.status_code}: {r.text[:200]}")
+    r.raise_for_status()
+    parts = r.json()["candidates"][0]["content"]["parts"]
+    return "".join(p.get("text", "") for p in parts if not p.get("thought"))
+
+
 def _ask_ai_once(prompt):
     if GEMINI_KEY:
-        r = requests.post(
-            f"https://generativelanguage.googleapis.com/v1beta/models/{GEMINI_MODEL}:generateContent",
-            headers={"x-goog-api-key": GEMINI_KEY, "content-type": "application/json"},
-            json={"contents": [{"parts": [{"text": prompt}]}],
-                  "generationConfig": {"responseMimeType": "application/json"}},
-            timeout=240)
-        r.raise_for_status()
-        time.sleep(15)  # stay inside free-tier limits
-        return "".join(p.get("text", "") for p in r.json()["candidates"][0]["content"]["parts"])
+        if _GEMINI["model"]:
+            out = _gemini_call(_GEMINI["model"], _GEMINI["config"], prompt)
+            time.sleep(8)
+            return out
+        last = None
+        for model in gemini_models():            # find a model + setting that works, then remember it
+            for cfg in GEN_CONFIGS:
+                try:
+                    out = _gemini_call(model, cfg, prompt)
+                    _GEMINI.update(model=model, config=cfg)
+                    print("Using Gemini model:", model)
+                    time.sleep(8)
+                    return out
+                except ValueError as ex:          # this model / setting not accepted -> try next
+                    last = ex
+                    if str(ex).startswith("404"):
+                        break
+        raise RuntimeError(f"No Gemini model worked: {last}")
     r = requests.post("https://api.anthropic.com/v1/messages",
                       headers={"x-api-key": CLAUDE_KEY, "anthropic-version": "2023-06-01",
                                "content-type": "application/json"},
