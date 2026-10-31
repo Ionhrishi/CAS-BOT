@@ -123,24 +123,5 @@
   "0f11e8534de3b16d": "2026-10-31T02:18:14.477841+00:00"
  },
  "pages": {},
- "queue": [
-  {
-   "name": "Battery Innovation Contest 2026",
-   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBFLXhiR1doaVJlM2puNmRLRDJ5X281ckpfVkJrSXpuNnU2ZzhxbkZtYS1yRi1lTXFlWHFFamEwSnIwQ2s4MllqcDlPSUxKREZuT0JzVjFmaVZndlE?oc=5",
-   "category": "Research grant / Project",
-   "score": 5,
-   "organiser": "LG Energy Solution",
-   "mode": "Online",
-   "venue": "",
-   "fee": "",
-   "deadline": "",
-   "dates": "",
-   "eligibility": "Researchers and faculty",
-   "certificate": "",
-   "summary": "Industry research grant for battery tech and nanomaterials.",
-   "image": "",
-   "brochure": "",
-   "added": "2026-10-31T02:18:14.477841+00:00"
-  }
- ]
+ "queue": []
 }
