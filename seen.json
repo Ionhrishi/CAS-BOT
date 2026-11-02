@@ -126,8 +126,30 @@
   "9ab5ecf23648bcac": "2026-11-01T02:20:11.394981+00:00",
   "e0ad06b5034b736e": "2026-11-01T02:20:11.394981+00:00",
   "28ccc56d030f121c": "2026-11-01T02:20:11.394981+00:00",
-  "8340ce75205d7fde": "2026-11-01T02:20:11.394981+00:00"
+  "8340ce75205d7fde": "2026-11-01T02:20:11.394981+00:00",
+  "e06c8ba1d4bb419f": "2026-11-02T02:23:44.396186+00:00",
+  "191f32aa264e8f55": "2026-11-02T02:23:44.396186+00:00",
+  "b2f77575967cec47": "2026-11-02T02:23:44.396186+00:00"
  },
  "pages": {},
- "queue": []
+ "queue": [
+  {
+   "name": "Prime Minister Professorship at ANRF",
+   "link": "https://news.google.com/rss/articles/CBMihwFBVV95cUxQNGtvWEJIRjhSSTh6bElNeC1SLUZIN2tpQ0FuTHN0LVlFSlRXNWdxOTJ6TTZHZFFmb1BNN00xcHdnWXd0Znd4dmMxampUVWlFU3hlclpNRUNkLVVxWHZtTHJibTJuMmYxZWVjUW9VOXRfVHduQXBINEpGdTFWSEdlaVN1NThKUGM?oc=5",
+   "category": "Research grant / Project",
+   "score": 5,
+   "organiser": "ANRF",
+   "mode": "",
+   "venue": "",
+   "fee": "₹2,50,000",
+   "deadline": "",
+   "dates": "",
+   "eligibility": "Researchers and faculty members",
+   "certificate": "",
+   "summary": "Prestigious research fellowship supporting advanced chemistry research and CAS promotion.",
+   "image": "",
+   "brochure": "",
+   "added": "2026-11-02T02:23:44.396186+00:00"
+  }
+ ]
 }
