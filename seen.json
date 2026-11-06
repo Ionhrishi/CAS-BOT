@@ -152,8 +152,34 @@
   "e7f921ced789319d": "2026-11-05T02:29:28.864132+00:00",
   "8aad84c279afb932": "2026-11-05T02:29:28.864132+00:00",
   "7dc5c22f77ff728f": "2026-11-05T02:29:28.864132+00:00",
-  "de680ba3b97edce5": "2026-11-05T02:29:28.864132+00:00"
+  "de680ba3b97edce5": "2026-11-05T02:29:28.864132+00:00",
+  "848c8e5297c28aaa": "2026-11-06T02:30:27.150075+00:00",
+  "cb77626871d4f011": "2026-11-06T02:30:27.150075+00:00",
+  "0e428df4a2dcddfc": "2026-11-06T02:30:27.150075+00:00",
+  "7c7222cbd0518363": "2026-11-06T02:30:27.150075+00:00",
+  "9b37b959cfadbcaf": "2026-11-06T02:30:27.150075+00:00",
+  "09555adcbd831f80": "2026-11-06T02:30:27.150075+00:00",
+  "1577b37cf6a77235": "2026-11-06T02:30:27.150075+00:00"
  },
  "pages": {},
- "queue": []
+ "queue": [
+  {
+   "name": "Proof-to-Patent Program",
+   "link": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNMkF1TXVHbUJudmkxNnZRMFE3d084NnljOFNaTUNXV0J3Y2dMNGJRS3RjZVhMVjAyaHJBaE9zNXhDVDFPTXlkLTJXUjh3eEdBYTloTHBUYi1JbFZ3dFBSZzY1R190RHd2NnhnWG1vaEVrVDk5MS1DcGhUT3p5X3ZjRzVyTUF4dDNDcGlobGdZMnRHRVQ1dXBQcVgybVktZ05p?oc=5",
+   "category": "Patent / IPR",
+   "score": 4,
+   "organiser": "West Virginia University",
+   "mode": "Online",
+   "venue": "",
+   "fee": "$10,000",
+   "deadline": "",
+   "dates": "",
+   "eligibility": "Researchers",
+   "certificate": "",
+   "summary": "Funding support for patenting research innovations.",
+   "image": "",
+   "brochure": "",
+   "added": "2026-11-06T02:30:27.150075+00:00"
+  }
+ ]
 }
