@@ -185,8 +185,37 @@
   "22487f4ada2d0bd3": "2026-11-11T02:21:41.787215+00:00",
   "909b5611ea1a0918": "2026-11-11T02:21:41.787215+00:00",
   "c29cf09075f0fe9f": "2026-11-11T02:21:41.787215+00:00",
-  "4a030682faaff232": "2026-11-11T02:21:41.787215+00:00"
+  "4a030682faaff232": "2026-11-11T02:21:41.787215+00:00",
+  "26d4f11ff63d4d2c": "2026-11-12T02:27:50.881993+00:00",
+  "d8893c25ca8b162b": "2026-11-12T02:27:50.881993+00:00",
+  "750bd69fa293ee8a": "2026-11-12T02:27:50.881993+00:00",
+  "51fa43068f71adb5": "2026-11-12T02:27:50.881993+00:00",
+  "b12918124e43d3cf": "2026-11-12T02:27:50.881993+00:00",
+  "81f9a29813964dc7": "2026-11-12T02:27:50.881993+00:00",
+  "708bc9ff6df060d9": "2026-11-12T02:27:50.881993+00:00",
+  "82e6f88a8e33578c": "2026-11-12T02:27:50.881993+00:00",
+  "d8fe0226471f5eb0": "2026-11-12T02:27:50.881993+00:00",
+  "eff88fc293ff521c": "2026-11-12T02:27:50.881993+00:00"
  },
  "pages": {},
- "queue": []
+ "queue": [
+  {
+   "name": "AICTE Research Schemes, Eligibility and Grants",
+   "link": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBKS2dDcEkwWFR0bTJPQjdqdS1LNFg1M0J3SVQtN0lMdmZ3S2xoaW1RNXBGOHVYcEx5SDNHd1VKbVlJaDluWUE?oc=5",
+   "category": "Research grant / Project",
+   "score": 4,
+   "organiser": "AICTE",
+   "mode": "Online",
+   "venue": "",
+   "fee": "",
+   "deadline": "",
+   "dates": "",
+   "eligibility": "Faculty in AICTE approved institutions",
+   "certificate": "",
+   "summary": "Funding opportunities for research projects.",
+   "image": "",
+   "brochure": "",
+   "added": "2026-11-12T02:27:50.881993+00:00"
+  }
+ ]
 }
